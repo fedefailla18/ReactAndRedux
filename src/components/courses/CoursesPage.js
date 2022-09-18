@@ -57,7 +57,6 @@ function mapStateToProps(state) {
       state.authors.length === 0
         ? []
         : state.courses.map((course) => {
-            console.log(course);
             return {
               ...course,
               authorName: state.authors.find((a) => a.id === course.authorId)
