@@ -5,7 +5,6 @@ import * as authorActions from "../../redux/actions/authorActions";
 import PropTypes from "prop-types";
 import { newCourse } from "../../../tools/mockData";
 import CourseForm from "./CourseForm";
-import courses from "../../redux/reducers/courses";
 
 const ManageCoursesPage = ({
   courses,
@@ -70,11 +69,11 @@ ManageCoursesPage.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export function getCourseBySlug(courses, slug) {
+export const getCourseBySlug = (courses, slug) => {
   return courses.find((course) => course.slug === slug) || null;
-}
+};
 
-function mapStateToProps(state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
   const slug = ownProps.match.params.slug;
   const course =
     slug && state.courses.length > 0
@@ -85,7 +84,7 @@ function mapStateToProps(state, ownProps) {
     courses: state.courses,
     authors: state.authors,
   };
-}
+};
 
 const mapDispatchToProps = {
   loadCourses,
