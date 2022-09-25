@@ -1,5 +1,5 @@
 import React from "react";
-import { getByText, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import CourseForm from "./CourseForm";
 
 const renderCourseForm = (args) => {
@@ -21,12 +21,12 @@ it("should render Add course header", () => {
   getByText("Add Course");
 });
 
-it("should render Save course header", () => {
+it("should label save button as Save", () => {
   const { getByText } = renderCourseForm();
   getByText("Save");
 });
 
-it("should render Saving... course header", () => {
+it("should label save button as Saving... when saving", () => {
   const { getByText } = renderCourseForm({ saving: true });
   getByText("Saving...");
 });
