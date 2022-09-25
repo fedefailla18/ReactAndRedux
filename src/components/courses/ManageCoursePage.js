@@ -8,7 +8,7 @@ import Spinner from "../common/Spinner";
 import CourseForm from "./CourseForm";
 import { toast } from "react-toastify";
 
-const ManageCoursesPage = ({
+export function ManageCoursesPage({
   courses,
   authors,
   loadAuthors,
@@ -16,7 +16,7 @@ const ManageCoursesPage = ({
   saveCourse,
   history,
   ...props
-}) => {
+}) {
   const [course, setCourse] = useState({ ...props.course });
   const [errors, setErrors] = useState({});
   const [saving, setSaving] = useState(false);
@@ -83,7 +83,7 @@ const ManageCoursesPage = ({
       saving={saving}
     />
   );
-};
+}
 
 ManageCoursesPage.propTypes = {
   course: PropTypes.object.isRequired,
