@@ -9,7 +9,7 @@ it("sets submit button label 'Saving...' when saving is true", () => {
       course={courses[0]}
       authors={authors}
       onSave={jest.fn()}
-      onchange={jest.fn()}
+      onChange={jest.fn()}
       saving
     />
   );
@@ -23,7 +23,7 @@ it("sets submit button label 'Save' when saving is false", () => {
       course={courses[0]}
       authors={authors}
       onSave={jest.fn()}
-      onchange={jest.fn()}
+      onChange={jest.fn()}
       saving={false}
     />
   );
